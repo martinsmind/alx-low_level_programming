@@ -1,24 +1,22 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
+/* more headers goes there */
 
 /**
- * main - prints the alphabet in lowercase,
- * followedby a new line
- * main - Prints the alphabet
- *
- * Return: Always 0 (Success)
- */
+*  main - prints the alphabet in lowercase
+*
+* Return: character
+*/
 int main(void)
 {
-	char ch;
-	char alp[26] = "abcdefghijklmnopqrstuvwxyz";
-	int i;
+	char c = 'a';
 
-	for (ch = 'a'; ch <= 'z' ch++)
-	for (i = 0; i < 26; i++)
+	while (c <= 'z')
 	{
-		putchar(ch);
-		putchar(alp[i]);
+		putchar(c);
+		c++;
 	}
-	putchar('\n';
+	putchar('\n');
 	return (0);
 }
