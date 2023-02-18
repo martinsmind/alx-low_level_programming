@@ -4,7 +4,6 @@
 #include <math.h>
 /* more headers goes there */
 
-/* betty style doc for function main goes there */
 /**
 *  main - checked n if is less than 6 and not 0 or greater than 5 or is 0
 *
@@ -12,11 +11,12 @@
 */
 int main(void)
 {
-	int n;
+	int n, der;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
+
 	der = n % 10;
 
 	if (der > 5)
