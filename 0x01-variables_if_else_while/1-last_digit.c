@@ -1,29 +1,26 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
-#include <math.h>
-/* more headers goes there */
-
+#include <stdlib.h>
 /**
-*  main - checked n if is less than 6 and not 0 or greater than 5 or is 0
-*
-* Return: int
-*/
+ * main - Prints the last digit of a randomly generated number
+ * and whether it it greather than 5, less than 6, or 0.
+ *
+ * Return: Always 0
+ */
 int main(void)
 {
-int n, der;
-srand(time(0));
-n = rand() - RAND_MAX / 2;
-/* your code goes there */
-/* Cela retournera le nombre total de chiffres - 1 */
-/* l = log10(n); */
-/* pre = n / pow(10, l); */
-der = n % 10;
-if (der > 5)
-printf("Last digit of %d is %d and is greater than 5\n", n, der);
-else if (der == 0)
-printf("Last digit of %d is %d and is 0\n", n, der);
-else if (der < 6 && n != 0)
-printf("Last digit of %d is %d and is less than 6 and not 0\n", n, der);
-return (0);
-}}
+	int n;
+
+	int m;
+
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+
+	m = n % 10;
+	if (m > 5)
+		printf("Last digit of %d is %d and is greater than 5\n", n, m);
+	if (m == 0)
+		printf("Last digit of %d is %d and is 0\n", n, m);
+	if (m < 6 && m != 0)
+		printf("Last digit of %d is %d and is than 6 and not 0\n", n, m);
+	return (0);
+}
