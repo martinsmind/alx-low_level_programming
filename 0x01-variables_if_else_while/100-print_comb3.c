@@ -1,40 +1,35 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
-#include <math.h>
+#include <stdlib.h>
 /**
-*  main -  prints all possible combinations of single-digit numbers
-*
-* Return: numbers separate by goma
-*/
+ * main - program that prints all possible different combinations of two digits
+ * Numbers should be printed in ascending order, with two digits
+ *
+ * Return: 0
+ */
 int main(void)
 {
-	int n = 48;
+	int c;
+	int d = 0;
 
-	int m = 49;
-
-	int j = 0, i = 0, a = 8;
-
-	while (i  <= a && a != -1)
+	while (d < 10)
 	{
-		i++;
-		while (j <= a)
+		c = 0;
+		while (c < 10)
 		{
-			putchar(n);
-			putchar(m);
-			if (n != 56 || m != 57)
+			if (d != c && d < c)
 			{
-				putchar(',');
-				putchar(',');
+				putchar('0' + d);
+				putchar('0' + c);
+
+				if (c + d != 17)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-			m++;
-			j++;
+			c++;
 		}
-		n++;
-		m = m - a;
-		a--;
-		i = 0;
-		j = 0;
+		d++;
 	}
 	putchar('\n');
 	return (0);
