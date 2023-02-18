@@ -1,35 +1,42 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
-#include <math.h>
-
+#include <stdlib.h>
 /**
-*  main -  prints all possible combinations of single-digit numbers
-*
-* Return: numbers separate by goma
-*/
-
+ * main - program that prints all different combinations of three digits
+ * Print only the smallest combination of three digits
+ *
+ * Return: 0
+ */
 int main(void)
 {
-	char i = '0', j = '0', k = '0';
+	int c;
+	int d;
+	int e = 0;
 
-	int a = 8;
-
-	for (; i <= '9'; i++)
+	while (e < 10)
 	{
-		for (; j < '7'; j++)
+		d = 0;
+		while (d < 10)
 		{
-			for (; k < '3'; k++)
+			c = 0;
+			while (c < 10)
 			{
-				putchar (i);
-				putchar (i + 1);
-				putchar (i + 2);
+				if (c != d && d != e && e < d && d < c)
+				{
+					putchar('0' + e);
+					putchar('0' + d);
+					putchar('0' + c);
 
-				putchar(',');
-				putchar(' ');
+					if (c + d + e != 9 + 8 + 7)
+					{
+						putchar(',');
+						putchar(' ');
+					}
+				}
+				c++;
 			}
+			d++;
 		}
-		putchar(i);
+		e++;
 	}
 	putchar('\n');
 	return (0);
