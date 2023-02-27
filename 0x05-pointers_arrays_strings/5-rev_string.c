@@ -1,37 +1,27 @@
 #include "main.h"
-#include <stdio.h>
-#include <unistd.h>
 /**
- *rev_string - function that reverses a string.
- *@s: table of caracter
- *Return: Void
- */
+ * rev_string - reverses a string
+ *
+ * @s: string parameter input
+ *
+ * Return: Nothing
+*/
 
 void rev_string(char *s)
 {
-	long int i = sizeof(s);
-	char *p = s;
-	/* while (*p != '\0') */
-	/* { */
-	/* 	printf("%c" ,*p++); */
-	/*  } */
-	printf("lent of p = %ld\n", sizeof(p));
+	int l, i;
+	char ch;
 
-	while (i >= 0)
+	/*find string length without null char*/
+	for (l = 0; s[l] != '\0'; ++l)
+		;
+
+	/*swap the string by looping to half the string*/
+	for (i = 0; i < l / 2; ++i)
 	{
-		/* printf("i=%d\n",i); */
-		/* printf("siz-i=%ld\n",sizeof(s) - i); */
-		/* printf ("%c", s[i--]); */
-		*(p + (sizeof(s) - i)) = s[i];
-		/* printf("sizeof = %ld \n", sizeof(s)); */
-		/* printf("%c\n", s[i]); */
-		/* p++; */
-		printf("\np=%c\n" ,*p);
-	       printf("size of p = %ld\n", sizeof(p));
-		i--;
-
+		ch = s[i];
+		s[i] = s[l - 1 - i]; /*-1 because the array starts from 0*/
+		s[l - 1 - i] = ch;
 	}
-	printf("\n");
-	/* sleep(2); */
-	/* *s = *p; */
+
 }
