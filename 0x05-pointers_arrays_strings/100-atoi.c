@@ -1,32 +1,28 @@
 #include "main.h"
-#include <stdlib.h>
-/* #include <string.h> */
-#include <stdio.h>
-/* #include <stddef.h> */
 
 /**
- *_atoi - function that convert a string to an integer.
- *@s:pointer of caracter
- *Return: integer
+ * _atoi - convert a string to an integer.
+ * @s: the string to be comverted.
+ *
+ *Return: The integer value of the comverted string.
  */
 
 int _atoi(char *s)
 {
-	int sum = 0;
-	/**
-     * On somme toutes les valeurs passées en arguments du programme.
-     * Pour ce faire on déplace le pointeur argv pour scanner tous
-     * les arguments
-     */
-	while (*s != 0)
-	 {
-	 	/* printf ("s = %d\n", *s); */
-                sum = atoi(s + '0');
-	 	s++;
-		printf ("sum = %d\n", sum);
-	 }
-	printf ("sum = %d\n", sum);
-		 /* int a = atoi( *sum);*/
+	int sign = 1;
+	unsigned int num = 0;
 
-	return (0);
+	do {
+
+		if (*s == '-')
+			sign *= -1;
+
+		else if (*s >= '0' && *s <= '9')
+			num = (num * 10) + (*s - '0');
+
+		else if (num > 0)
+			break;
+	} while (*s++);
+
+	return (num * sign);
 }
