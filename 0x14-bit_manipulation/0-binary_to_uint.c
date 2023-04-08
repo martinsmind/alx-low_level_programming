@@ -6,23 +6,20 @@
   */
 unsigned int _stoi(char c)
 {
-	return ((unsigned int) (c - '0'));
+	return ((unsigned int) c - '0');
 }
 /**
-  * _strlen - returns the length of the string
-  * @s: the string to measure
+  * _strlen - return the length of the string
+  * @s: measure the lenght
   * Return: the length of string
   */
 unsigned int _strlen(const char *s)
 {
-	unsigned int length = 0;
+	unsigned int i;
 
-	while (*s)
-	{
-		length++;
-		s++;
-	}
-	return (length);
+	for (i = 0; s[i]; i++)
+		;
+	return (i);
 }
 /**
   * binary_to_uint - converts a string of 1's and 0's to a decimal number
@@ -31,25 +28,19 @@ unsigned int _strlen(const char *s)
   */
 unsigned int binary_to_uint(const char *b)
 {
+	int i;
+	unsigned int result, tmp, expo;
+
 	if (b == NULL)
-	{
 		return (0);
-	}
-
-	unsigned int len = _strlen(b);
-	unsigned int value = 0;
-	unsigned int exponent = 1;
-
-	for (int i = len - 1; i >= 0; i--)
+	result = tmp = 0;
+	expo = 1;
+	for (i = _strlen(b) - 1; b[i]; i--, expo *= 2)
 	{
 		if (b[i] != '0' && b[i] != '1')
-		{
 			return (0);
-		}
-
-		value += _stoi(b[i]) * exponent;
-		exponent *= 2;
+		tmp = _stoi(b[i]);
+		result += tmp * expo;
 	}
-
-	return (value)
+	return (result);
 }
