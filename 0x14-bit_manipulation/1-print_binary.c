@@ -9,5 +9,5 @@ void print_binary(unsigned int n)
 	if (n > 1)
 		print_binary(n / 2);
 
-	putchar((n % 2) ? '1' : '0');
+	_putchar((n % 2) ? '1' : '0');
 }
